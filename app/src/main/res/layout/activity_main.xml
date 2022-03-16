@@ -5,19 +5,41 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:padding="10dp"
+    android:paddingEnd="10dp"
     tools:context=".MainActivity">
 
     <TextView
-        android:id="@+id/textViewInput"
+        android:id="@+id/textViewFirstArg"
         android:layout_width="0dp"
-        android:layout_height="200dp"
-        android:layout_marginTop="16dp"
-        android:text="999+22"
+        android:layout_height="wrap_content"
+        android:text="999"
         android:textColor="@color/black"
         android:textSize="50sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/textViewOperator"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="+"
+        android:textColor="@color/black"
+        android:textSize="35sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/textViewFirstArg" />
+
+    <TextView
+        android:id="@+id/textViewSecondArg"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="22"
+        android:textColor="@color/black"
+        android:textSize="50sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/textViewOperator" />
 
     <TextView
         android:id="@+id/textViewResult"
@@ -28,16 +50,17 @@
         android:textSize="40sp"
         app:layout_constraintBottom_toTopOf="@+id/guidelineTop"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textViewInput"
+        app:layout_constraintTop_toBottomOf="@+id/textViewSecondArg"
         app:layout_constraintVertical_bias="0.81" />
 
 
     <View
+        android:id="@+id/line"
         android:layout_width="match_parent"
         android:layout_height="1dp"
         android:background="@color/purple_500"
         app:layout_constraintBottom_toTopOf="@id/guidelineTop"
-        app:layout_constraintTop_toBottomOf="@id/textViewResult"/>
+        app:layout_constraintTop_toBottomOf="@id/textViewResult" />
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/guidelineTop"
@@ -53,7 +76,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="10dp"
-        android:text="@string/bracket"
+        android:text="@string/percent"
         app:backgroundTint="@null"
         app:layout_constraintBottom_toTopOf="@+id/button1"
         app:layout_constraintEnd_toStartOf="@+id/buttonClear"
@@ -319,7 +342,6 @@
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toEndOf="@+id/buttonDot"
         app:layout_constraintTop_toTopOf="@+id/buttonDot" />
-
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

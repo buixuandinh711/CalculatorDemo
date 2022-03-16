@@ -11,7 +11,7 @@
     <string name="number_8">8</string>
     <string name="number_9">9</string>
 
-    <string name="bracket">()</string>
+    <string name="percent">%</string>
     <string name="clear">C</string>
     <string name="delete">DEL</string>
     <string name="add">+</string>
