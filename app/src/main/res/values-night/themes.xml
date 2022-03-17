@@ -13,4 +13,23 @@
         <item name="android:statusBarColor" tools:targetApi="l">?attr/colorPrimaryVariant</item>
         <!-- Customize your theme here. -->
     </style>
+
+    <style name="GeneralButton" parent="Widget.MaterialComponents.Button">
+        <item name="android:background">@drawable/night_button</item>
+        <item name="android:textSize">30sp</item>
+        <item name="android:textColor">@color/smoke_white</item>
+        <item name="android:minWidth">0dp</item>
+    </style>
+
+    <style name="FilledButton" parent="Widget.MaterialComponents.Button">
+        <item name="android:background">@drawable/filled_button</item>
+        <item name="android:textSize">30sp</item>
+        <item name="android:textColor">@color/smoke_white</item>
+        <item name="android:minWidth">0dp</item>
+    </style>
+    <style name="ArgTextView" parent="Widget.AppCompat.TextView">
+        <item name="android:maxLines">1</item>
+        <item name="android:textColor">@color/smoke_white</item>
+        <item name="android:textSize">@dimen/arg_text_size</item>
+    </style>
 </resources>
