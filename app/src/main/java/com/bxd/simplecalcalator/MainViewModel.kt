@@ -1,10 +1,10 @@
 package com.bxd.simplecalcalator
 
-import android.util.Log
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import kotlin.math.abs
+import kotlin.math.pow
 import kotlin.math.round
 
 class MainViewModel : ViewModel() {
@@ -17,6 +17,7 @@ class MainViewModel : ViewModel() {
     private val DOT_SIGN = "."
     private val MAX_VAL = 999999999999
     private val MIN_VAL = 0.0000000001
+    private val MAX_REUSULT_LENGTH = 14
 
     private val _firstArg = MutableLiveData<String>()
     val firstArg: LiveData<String>
@@ -213,9 +214,14 @@ class MainViewModel : ViewModel() {
         if (isInt(res)) {
             return res.toLong().toBigDecimal().toPlainString()
         }
-        val precision = 10000000000.0
-        res = round(res * precision) / precision
-        return res.toBigDecimal().toPlainString()
+        return formatDoubleResult(res)
+    }
+
+    private fun formatDoubleResult(res: Double): String {
+        val intLen = res.toLong().toBigDecimal().toPlainString().length
+        val precision = 10.0.pow(MAX_REUSULT_LENGTH - intLen - 1)
+        val roundedRes = round(res * precision) / precision
+        return roundedRes.toBigDecimal().toPlainString()
     }
 
     private fun isInt(n: Double): Boolean {
